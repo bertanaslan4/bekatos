@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="zxx">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-H9FP6DFJ4J"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-H9FP6DFJ4J");
+    </script>
     <!-- meta tag -->
     <meta charset="utf-8" />
     <title>Bekatos</title>
@@ -15,7 +29,7 @@
     />
     <meta
       name="keywords"
-      content="QR kod, QR yazılımı, QR menü, Dijital Kart,Dijital Kartvizit,E Kılavuz, Yazılım, İzmir Yazılım,Akıllı Kartvizit"
+      content="QR kod, QR yazılımı, QR menü, Dijital Kart,Dijital Kartvizit,E Kılavuz, Yazılım, İzmir Yazılım,Akıllı Kartvizit,QR Kod Kılavuz, Kullanım Kılavuzu"
     />
     <meta name="robots" content="index, follow" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -79,6 +93,26 @@
       <div class="loader-container"></div>
     </div>
     <!--Preloader area End here-->
+
+    <section
+      class="eva-intro"
+      id="evaIntro"
+      data-enter-url="qr-solutions.html"
+      aria-label="Bekatos EVA giriş animasyonu"
+    >
+      <div class="eva-intro__copy">
+        <span class="eva-intro__eyebrow">Bekatos EVA</span>
+        <h1>Dijital kılavuzlara yeni nesil QR geçişi</h1>
+        <p>
+          Ürün, servis ve müşteri deneyimi bilgilerini tek bir akıllı panelde
+          buluşturan etkileşimli Bekatos çözümü.
+        </p>
+      </div>
+      <div class="eva-intro__stage" id="evaIntroStage"></div>
+      <div class="eva-intro__progress" aria-hidden="true">
+        <span id="evaIntroProgress"></span>
+      </div>
+    </section>
 
     <!-- Main content Start -->
     <div class="main-content">
@@ -1583,6 +1617,7 @@
     <script src="assets/js/contact.form.js"></script>
     <!-- main js -->
     <script src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/bekatos-eva-intro.js"></script>
   </body>
 
   <!-- Mirrored from rstheme.com/products/html/braintech/index2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Dec 2021 21:25:03 GMT -->
