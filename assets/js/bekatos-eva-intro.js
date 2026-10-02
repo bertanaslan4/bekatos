@@ -1,12 +1,13 @@
 import * as THREE from "https://unpkg.com/three@0.160.0/build/three.module.js";
 
 const intro = document.getElementById("evaIntro");
+const dialog = intro?.querySelector(".eva-intro__dialog");
 const stage = document.getElementById("evaIntroStage");
-const progressBar = document.getElementById("evaIntroProgress");
+const openButton = document.getElementById("openEvaIntro");
+const closeButton = document.getElementById("evaIntroClose");
+const mainContent = document.querySelector(".main-content");
 
-if (intro && stage) {
-  document.body.classList.add("eva-intro-active");
-
+if (intro && dialog && stage) {
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
   const renderer = new THREE.WebGLRenderer({
@@ -15,47 +16,35 @@ if (intro && stage) {
     powerPreference: "high-performance",
   });
 
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.8));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   stage.appendChild(renderer.domElement);
 
-  const textureLoader = new THREE.TextureLoader();
-  const frontTexture = textureLoader.load("BekatosEvaPanel.png");
-  const backTexture = textureLoader.load("bekatosevaArka.png");
-  const textures = [frontTexture, backTexture];
-
-  textures.forEach((texture) => {
+  const loader = new THREE.TextureLoader();
+  const frontTexture = loader.load("BekatosEvaPanel.png");
+  const backTexture = loader.load("bekatosevaArka.png");
+  [frontTexture, backTexture].forEach((texture) => {
     texture.colorSpace = THREE.SRGBColorSpace;
     texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
   });
 
   const panel = new THREE.Group();
-  const panelRatio = 2480 / 3508;
   const panelHeight = 3.75;
-  const panelWidth = panelHeight * panelRatio;
+  const panelWidth = panelHeight * (2480 / 3508);
   const thickness = 0.055;
-  const frontMaterial = new THREE.MeshStandardMaterial({
-    map: frontTexture,
-    roughness: 0.68,
-    metalness: 0.02,
-  });
-  const backMaterial = new THREE.MeshStandardMaterial({
-    map: backTexture,
-    roughness: 0.72,
-    metalness: 0.02,
-  });
-  const edgeMaterial = new THREE.MeshStandardMaterial({
-    color: 0xf3efe5,
-    roughness: 0.88,
-  });
-  const faceGeometry = new THREE.PlaneGeometry(panelWidth, panelHeight);
-  const front = new THREE.Mesh(faceGeometry, frontMaterial);
-  const back = new THREE.Mesh(faceGeometry, backMaterial);
+  const face = new THREE.PlaneGeometry(panelWidth, panelHeight);
+  const front = new THREE.Mesh(
+    face,
+    new THREE.MeshStandardMaterial({ map: frontTexture, roughness: 0.68 })
+  );
+  const back = new THREE.Mesh(
+    face,
+    new THREE.MeshStandardMaterial({ map: backTexture, roughness: 0.72 })
+  );
   const edge = new THREE.Mesh(
     new THREE.BoxGeometry(panelWidth, panelHeight, thickness),
-    edgeMaterial
+    new THREE.MeshStandardMaterial({ color: 0xf3efe5, roughness: 0.88 })
   );
-
   front.position.z = thickness / 2 + 0.002;
   back.position.z = -thickness / 2 - 0.002;
   back.rotation.y = Math.PI;
@@ -65,113 +54,83 @@ if (intro && stage) {
 
   const keyLight = new THREE.DirectionalLight(0xffffff, 2.6);
   keyLight.position.set(2.8, 4, 5);
-  scene.add(keyLight);
-  scene.add(new THREE.AmbientLight(0xdcecff, 1.7));
+  scene.add(keyLight, new THREE.AmbientLight(0xdcecff, 1.7));
 
-  let targetProgress = 0;
-  let progress = 0;
-  let completed = false;
-  let lastTouchY = 0;
-
-  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-  const ease = (value) => value * value * (3 - 2 * value);
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let activeOpener = null;
+  let frame = 0;
+  let isOpen = false;
 
   const resize = () => {
     const width = stage.clientWidth;
     const height = stage.clientHeight;
+    if (!width || !height) return;
     renderer.setSize(width, height, false);
     camera.aspect = width / height;
+    camera.position.set(width < 520 ? 0.08 : 0.12, 0.02, width < 520 ? 5.55 : 5.05);
+    camera.lookAt(0, 0, 0);
     camera.updateProjectionMatrix();
   };
 
-  const updateProgress = (delta) => {
-    if (completed) {
-      return;
-    }
-
-    targetProgress = clamp(targetProgress + delta, 0, 1);
-    if (progressBar) {
-      progressBar.style.width = `${Math.round(targetProgress * 100)}%`;
-    }
-  };
-
-  const completeIntro = () => {
-    if (completed) {
-      return;
-    }
-
-    completed = true;
-    intro.classList.add("is-complete");
-    document.body.classList.remove("eva-intro-active");
-
-    window.setTimeout(() => {
-      const enterUrl = intro.getAttribute("data-enter-url");
-      if (enterUrl) {
-        window.location.href = enterUrl;
-      }
-    }, 560);
-  };
-
-  const onWheel = (event) => {
-    if (completed) {
-      return;
-    }
-
-    event.preventDefault();
-    updateProgress(event.deltaY / 1450);
-  };
-
-  const onTouchStart = (event) => {
-    lastTouchY = event.touches[0].clientY;
-  };
-
-  const onTouchMove = (event) => {
-    if (completed) {
-      return;
-    }
-
-    const currentY = event.touches[0].clientY;
-    updateProgress((lastTouchY - currentY) / 780);
-    lastTouchY = currentY;
-    event.preventDefault();
-  };
-
-  const animate = () => {
-    progress += (targetProgress - progress) * 0.085;
-    const easedProgress = ease(progress);
-    const idle = performance.now() * 0.00045;
-    const drift = Math.sin(idle) * 0.055;
-    const sideStart = window.innerWidth < 992 ? 0.22 : 1.12;
-
-    camera.position.set(
-      THREE.MathUtils.lerp(0.08, 0, easedProgress),
-      THREE.MathUtils.lerp(0.05, 0, easedProgress),
-      THREE.MathUtils.lerp(5.45, 0.72, easedProgress)
-    );
-    camera.lookAt(0, 0, 0);
-
-    panel.position.x = THREE.MathUtils.lerp(sideStart, 0, easedProgress);
-    panel.position.y = THREE.MathUtils.lerp(-0.03, 0, easedProgress);
-    panel.rotation.x = THREE.MathUtils.lerp(-0.06, 0, easedProgress);
-    panel.rotation.y =
-      THREE.MathUtils.lerp(-0.55, 0, easedProgress) +
-      (1 - easedProgress) * (idle * 0.42 + drift);
-    panel.rotation.z = THREE.MathUtils.lerp(0.035, 0, easedProgress);
-
+  const animate = (time) => {
+    if (!isOpen) return;
+    if (!reduceMotion) frame = window.requestAnimationFrame(animate);
+    const idle = time * 0.00042;
+    panel.rotation.set(-0.045 + Math.sin(idle * 0.7) * 0.025, -0.42 + Math.sin(idle) * 0.24, 0.025);
+    panel.position.y = Math.sin(idle * 1.5) * 0.045;
     renderer.render(scene, camera);
-
-    if (targetProgress > 0.985 && progress > 0.965) {
-      completeIntro();
-    } else {
-      requestAnimationFrame(animate);
-    }
   };
 
-  window.addEventListener("resize", resize);
-  intro.addEventListener("wheel", onWheel, { passive: false });
-  intro.addEventListener("touchstart", onTouchStart, { passive: true });
-  intro.addEventListener("touchmove", onTouchMove, { passive: false });
+  const openIntro = (event) => {
+    activeOpener = event?.currentTarget ?? null;
+    isOpen = true;
+    intro.classList.add("is-open");
+    intro.setAttribute("aria-hidden", "false");
+    intro.removeAttribute("inert");
+    document.body.classList.add("eva-intro-active");
+    if (mainContent) mainContent.inert = true;
+    resize();
+    if (reduceMotion) animate(0);
+    else frame = window.requestAnimationFrame(animate);
+    closeButton?.focus();
+  };
 
-  resize();
-  animate();
+  const closeIntro = () => {
+    isOpen = false;
+    window.cancelAnimationFrame(frame);
+    intro.classList.remove("is-open");
+    intro.setAttribute("aria-hidden", "true");
+    intro.setAttribute("inert", "");
+    document.body.classList.remove("eva-intro-active");
+    if (mainContent) mainContent.inert = false;
+    (activeOpener ?? openButton)?.focus();
+  };
+
+  openButton?.addEventListener("click", openIntro);
+  closeButton?.addEventListener("click", closeIntro);
+  intro.addEventListener("click", (event) => {
+    if (event.target === intro) closeIntro();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (!isOpen) return;
+    if (event.key === "Escape") {
+      closeIntro();
+      return;
+    }
+    if (event.key === "Tab") {
+      const focusable = [closeButton, intro.querySelector(".eva-intro__more")].filter(Boolean);
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
+  window.addEventListener("resize", resize);
+
+  window.setTimeout(() => openIntro(), 180);
 }

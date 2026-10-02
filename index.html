@@ -97,20 +97,26 @@
     <section
       class="eva-intro"
       id="evaIntro"
-      data-enter-url="qr-solutions.html"
-      aria-label="Bekatos EVA giriş animasyonu"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="evaIntroTitle"
+      aria-hidden="true"
+      inert
     >
-      <div class="eva-intro__copy">
-        <span class="eva-intro__eyebrow">Bekatos EVA</span>
-        <h1>Dijital kılavuzlara yeni nesil QR geçişi</h1>
-        <p>
-          Ürün, servis ve müşteri deneyimi bilgilerini tek bir akıllı panelde
-          buluşturan etkileşimli Bekatos çözümü.
-        </p>
-      </div>
-      <div class="eva-intro__stage" id="evaIntroStage"></div>
-      <div class="eva-intro__progress" aria-hidden="true">
-        <span id="evaIntroProgress"></span>
+      <div class="eva-intro__dialog">
+        <button class="eva-intro__close" id="evaIntroClose" type="button" aria-label="Pencereyi kapat">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+        <div class="eva-intro__copy">
+          <span class="eva-intro__eyebrow">Bekatos EVA</span>
+          <h1 id="evaIntroTitle">Dijital kılavuzlara yeni nesil QR geçişi</h1>
+          <p>
+            Ürün, servis ve müşteri deneyimi bilgilerini tek bir akıllı panelde
+            buluşturan etkileşimli Bekatos çözümü.
+          </p>
+          <a class="eva-intro__more" href="ekilavuz.html">Daha fazla bilgi al <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="eva-intro__stage" id="evaIntroStage" role="img" aria-label="Bekatos EVA QR kılavuzunun ön ve arka yüzünü gösteren üç boyutlu animasyon"></div>
       </div>
     </section>
 
@@ -327,120 +333,29 @@
       </div>
       <!--Full width header End-->
 
-      <!-- Slider Section Start -->
-      <div class="rs-slider style1">
-        <div
-          class="rs-carousel owl-carousel"
-          data-loop="true"
-          data-items="1"
-          data-margin="0"
-          data-autoplay="true"
-          data-hoverpause="true"
-          data-autoplay-timeout="5000"
-          data-smart-speed="800"
-          data-dots="false"
-          data-nav="false"
-          data-nav-speed="false"
-          data-center-mode="false"
-          data-mobile-device="1"
-          data-mobile-device-nav="false"
-          data-mobile-device-dots="false"
-          data-ipad-device="1"
-          data-ipad-device-nav="false"
-          data-ipad-device-dots="false"
-          data-ipad-device2="1"
-          data-ipad-device-nav2="false"
-          data-ipad-device-dots2="false"
-          data-md-device="1"
-          data-md-device-nav="true"
-          data-md-device-dots="false"
-        >
-          <div class="slider-content slide1">
-            <div class="container">
-              <div class="content-part text-center">
-                <div
-                  class="sl-sub-title wow bounceInLeft"
-                  data-wow-delay="300ms"
-                  data-wow-duration="2000ms"
-                >
-                  İşletmenizi ileriye taşıyın
-                </div>
-                <h1
-                  class="sl-title mb-mb-10 wow fadeInRight"
-                  data-wow-delay="600ms"
-                  data-wow-duration="2000ms"
-                >
-                  E-Kilavuz
-                </h1>
-                <div
-                  class="sl-desc fadeInUp"
-                  data-wow-delay="900ms"
-                  data-wow-duration="2000ms"
-                >
-                  Yenilikçi teknoloji ve QR Kod ile
-                </div>
-                <ul
-                  class="slider-btn wow fadeInRight"
-                  data-wow-delay="200ms"
-                  data-wow-duration="3000ms"
-                >
-                  <li>
-                    <div class="slider-video">
-                      <a class="popup-videos" href="bekatosQRvideo.mov">
-                        <i class="fa fa-play"></i>
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
+      <section class="bekatos-hero" aria-labelledby="bekatosHeroTitle">
+        <div class="bekatos-hero__grid" aria-hidden="true"></div>
+        <div class="bekatos-hero__copy">
+          <p class="bekatos-hero__eyebrow"><span></span> Dijital ürün stüdyosu</p>
+          <h1 id="bekatosHeroTitle">İşinizi geleceğe taşıyan <em>dijital deneyimler.</em></h1>
+          <p class="bekatos-hero__description">Web tasarımından mobil uygulamalara, işinize özel ERP sistemlerinden QR kılavuzlara kadar fikirlerinizi çalışan ürünlere dönüştürüyoruz.</p>
+          <div class="bekatos-hero__actions">
+            <a class="bekatos-hero__button bekatos-hero__button--primary" href="services.html">Çözümlerimizi keşfedin <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            <button class="bekatos-hero__button bekatos-hero__button--text" type="button" id="openEvaIntro"><span class="bekatos-hero__play"><i class="fa fa-qrcode" aria-hidden="true"></i></span> QR kılavuz deneyimi</button>
           </div>
-          <div class="slider-content slide2">
-            <div class="container">
-              <div class="content-part">
-                <div
-                  class="sl-sub-title wow bounceInLeft"
-                  data-wow-delay="300ms"
-                  data-wow-duration="2000ms"
-                >
-                  Yeni Nesil Kartvizit
-                </div>
-                <h1
-                  class="sl-title mb-mb-10 wow fadeInRight"
-                  data-wow-delay="600ms"
-                  data-wow-duration="2000ms"
-                >
-                  D-Card
-                </h1>
-                <div
-                  class="sl-desc wow fadeInUp"
-                  data-wow-delay="900ms"
-                  data-wow-duration="2000ms"
-                >
-                  Kolay ulaş, Tek tıkla paylaş
-                </div>
-                <div
-                  class="sl-btn wow fadeInUp"
-                  data-wow-delay="200ms"
-                  data-wow-duration="3000ms"
-                >
-                  <div class="slider-video text-center">
-                    <a class="popup-videos" href="dcardvideo.mov">
-                      <i class="fa fa-play"></i>
-                    </a>
-                  </div>
-                  <a
-                    class="readon learn-more slider-btn"
-                    href="https://shop.bekatos.com"
-                    >Hemen Edinin</a
-                  >
-                </div>
-              </div>
-            </div>
+          <div class="bekatos-hero__expertise" aria-label="Uzmanlık alanlarımız">
+            <a href="web-development.html">Web tasarım <span>↗</span></a>
+            <a href="management-systems.html">ERP sistemleri <span>↗</span></a>
+            <a href="mobile-development.html">Mobil uygulama <span>↗</span></a>
           </div>
         </div>
-      </div>
-      <!-- Slider Section End -->
+        <div class="bekatos-hero__visual">
+          <div class="bekatos-hero__visual-label"><span class="bekatos-hero__live-dot"></span> Fikirden ürüne</div>
+          <div class="bekatos-hero__stage" id="bekatosHeroStage" role="img" aria-label="Üç boyutlu web paneli ve mobil uygulama arayüzü animasyonu"></div>
+          <div class="bekatos-hero__caption"><span>01 / 03</span><span>WEB · ERP · MOBİL</span></div>
+        </div>
+        <a class="bekatos-hero__scroll" href="#bekatos-services"><span></span> Daha fazlası</a>
+      </section>
 
       <!-- Services Section Start -->
       <div class="rs-services main-home style1 pt-100 md-pt-70">
@@ -711,6 +626,7 @@
       <!-- Partner End -->
       <!-- Services Section Start -->
       <div
+        id="bekatos-services"
         class="pt-relative rs-services style4 modify1 services3 gray-color pt-120 md-pt-80"
       >
         <div class="container">
@@ -1617,6 +1533,7 @@
     <script src="assets/js/contact.form.js"></script>
     <!-- main js -->
     <script src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/bekatos-home-scene.js"></script>
     <script type="module" src="assets/js/bekatos-eva-intro.js"></script>
   </body>
 
