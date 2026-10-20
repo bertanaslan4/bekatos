@@ -1,0 +1,949 @@
+/**
+ * Bekatos Software House - Modern Tech & Ticket Showcase Stylesheet
+ */
+
+:root {
+  --beka-teal: #147c71;
+  --beka-teal-bright: #20a48e;
+  --beka-cyan: #00f2fe;
+  --beka-cyan-light: #38bdf8;
+  --beka-emerald: #10b981;
+  --beka-rose: #f43f5e;
+  --beka-amber: #fbbf24;
+  --beka-dark-900: #060c14;
+  --beka-dark-800: #0a1420;
+  --beka-dark-700: #0f1d2e;
+  --beka-dark-600: #162a3f;
+  --beka-dark-card: rgba(15, 29, 46, 0.78);
+  --beka-border-glow: rgba(32, 164, 142, 0.35);
+  --beka-glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* Header Flex Layout Fixes */
+.bekatos-header-flex {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 15px !important;
+  width: 100% !important;
+}
+
+.bekatos-header-flex .main-menu {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.bekatos-header-flex .rs-menu {
+  padding-right: 0 !important;
+}
+
+.full-width-header .rs-header.style2 .menu-area .main-menu .rs-menu ul.nav-menu li {
+  margin-right: 22px !important;
+}
+
+@media (max-width: 1240px) {
+  .full-width-header .rs-header.style2 .menu-area .main-menu .rs-menu ul.nav-menu li {
+    margin-right: 14px !important;
+  }
+  .header-ticket-cta-wrap .rs-ticket-btn {
+    padding: 0 14px !important;
+    font-size: 12px !important;
+  }
+}
+
+.header-ticket-cta-wrap {
+  display: inline-flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  margin-left: 10px !important;
+}
+
+/* Header Top CTA Button */
+.rs-ticket-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  background: linear-gradient(135deg, #147c71 0%, #20a48e 100%) !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  padding: 0 18px !important;
+  border-radius: 20px !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(20, 124, 113, 0.38) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  white-space: nowrap !important;
+  border: 1px solid rgba(45, 212, 191, 0.4) !important;
+}
+
+.rs-ticket-btn:hover {
+  background: linear-gradient(135deg, #20a48e 0%, #00f2fe 100%) !important;
+  color: #060c14 !important;
+  box-shadow: 0 6px 20px rgba(0, 242, 254, 0.45) !important;
+  transform: translateY(-2px);
+}
+
+.rs-ticket-btn .live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 10px #34d399;
+  animation: bekaPulse 1.8s infinite;
+}
+
+@keyframes bekaPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* Ambient 3D Network Layer */
+.bekatos-ambient-network {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.85;
+}
+
+.bekatos-ambient-network canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* Hero Section Enhancements */
+.bekatos-hero {
+  position: relative;
+  background: linear-gradient(180deg, #070e17 0%, #0c1826 100%) !important;
+  color: #f1f5f9 !important;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(32, 164, 142, 0.2);
+  min-height: 650px;
+  padding-bottom: 85px !important;
+}
+
+.rs-services.main-home.style1 {
+  position: relative;
+  z-index: 5;
+}
+
+.bekatos-hero .bekatos-hero__grid {
+  background-image: 
+    linear-gradient(rgba(32, 164, 142, 0.08) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(32, 164, 142, 0.08) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at 60% 40%, #000 30%, transparent 85%);
+}
+
+.bekatos-hero h1 {
+  color: #ffffff !important;
+  font-size: 46px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px !important;
+}
+
+.bekatos-hero h1 em {
+  background: linear-gradient(135deg, #20a48e 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: normal;
+}
+
+.bekatos-hero__description {
+  color: #94a3b8 !important;
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+}
+
+.bekatos-hero__quick-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 0;
+}
+
+.bekatos-hero__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(30, 41, 59, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  backdrop-filter: blur(8px);
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 18px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.bekatos-hero__pill:hover {
+  background: rgba(32, 164, 142, 0.2);
+  border-color: #20a48e;
+  color: #ffffff;
+}
+
+.bekatos-hero__pill--active {
+  background: rgba(32, 164, 142, 0.25);
+  border-color: #20a48e;
+  color: #2dd4bf;
+}
+
+.bekatos-hero__button--outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 50px;
+  padding: 0 20px;
+  border-radius: 4px;
+  border: 1px solid rgba(56, 189, 248, 0.6);
+  background: rgba(14, 165, 233, 0.12);
+  color: #38bdf8 !important;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.bekatos-hero__button--outline:hover {
+  background: #38bdf8;
+  color: #060c14 !important;
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(56, 189, 248, 0.4);
+}
+
+.bekatos-hero__expertise {
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.bekatos-hero__expertise a {
+  color: #94a3b8 !important;
+}
+
+.bekatos-hero__expertise a span {
+  color: #20a48e !important;
+}
+
+/* ========================================================
+   HERO 2-SLIDE CAROUSEL & 10s AUTO-PLAY STYLES
+   ======================================================== */
+.bekatos-hero__slides-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+}
+
+.bekatos-hero__slide {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(14px);
+}
+
+.bekatos-hero__slide.is-active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  animation: bekatosSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes bekatosSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bekatos-hero__title-slide2 {
+  color: #ffffff !important;
+  font-size: 44px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px !important;
+  font-weight: 700;
+}
+
+.bekatos-hero__title-slide2 em {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 50%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: normal;
+}
+
+.bekatos-hero__eyebrow .eva-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  display: inline-block;
+  animation: bekaPulse 1.8s infinite;
+}
+
+/* EVA Custom Hero Buttons */
+.bekatos-hero__button--eva {
+  background: linear-gradient(135deg, #10b981 0%, #20a48e 100%) !important;
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.38) !important;
+  border: 1px solid rgba(52, 211, 153, 0.5) !important;
+}
+
+.bekatos-hero__button--eva:hover {
+  background: linear-gradient(135deg, #34d399 0%, #00f2fe 100%) !important;
+  color: #060c14 !important;
+  box-shadow: 0 6px 24px rgba(52, 211, 153, 0.5) !important;
+}
+
+.bekatos-hero__button--outline-eva {
+  border-color: rgba(16, 185, 129, 0.6) !important;
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #34d399 !important;
+}
+
+.bekatos-hero__button--outline-eva:hover {
+  background: #10b981 !important;
+  color: #060c14 !important;
+  border-color: #10b981 !important;
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.4) !important;
+}
+
+.bekatos-hero__pill--eva-active {
+  background: rgba(16, 185, 129, 0.22) !important;
+  border-color: #10b981 !important;
+  color: #34d399 !important;
+}
+
+.live-dot--eva {
+  background: #34d399 !important;
+  box-shadow: 0 0 8px #34d399 !important;
+}
+
+/* Slider Controls & Progress Bars (10-Second Auto Timer) */
+.bekatos-hero__slider-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 30px;
+  padding: 10px 16px;
+  background: rgba(11, 22, 35, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  max-width: 580px;
+}
+
+.bekatos-hero__nav-tabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.bekatos-hero__nav-tab {
+  position: relative;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 10px 14px 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  overflow: hidden;
+  color: inherit;
+}
+
+.bekatos-hero__nav-tab:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(32, 164, 142, 0.3);
+}
+
+.bekatos-hero__nav-tab.is-active {
+  background: rgba(20, 124, 113, 0.18);
+  border-color: rgba(32, 164, 142, 0.6);
+  box-shadow: inset 0 0 16px rgba(32, 164, 142, 0.12);
+}
+
+.bekatos-hero__nav-tab .nav-tab-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.bekatos-hero__nav-tab .tab-index {
+  font-family: monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+  padding: 2px 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+}
+
+.bekatos-hero__nav-tab.is-active .tab-index {
+  color: #2dd4bf;
+  background: rgba(32, 164, 142, 0.25);
+}
+
+.bekatos-hero__nav-tab .tab-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.bekatos-hero__nav-tab.is-active .tab-name {
+  color: #ffffff;
+}
+
+.bekatos-hero__nav-tab .tab-sub {
+  display: block;
+  font-size: 11px;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 10s Animated Progress Line */
+.bekatos-hero__nav-tab .nav-tab-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.bekatos-hero__nav-tab .nav-tab-progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #20a48e 0%, #00f2fe 100%);
+  border-radius: 2px;
+}
+
+.bekatos-hero__nav-tab.is-active .nav-tab-progress-bar {
+  animation: bekatosSlideProgress 10s linear forwards;
+}
+
+/* Pause on Hero Hover */
+.bekatos-hero:hover .bekatos-hero__nav-tab.is-active .nav-tab-progress-bar {
+  animation-play-state: paused;
+}
+
+@keyframes bekatosSlideProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Arrows & Timer Chip */
+.bekatos-hero__nav-arrows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.bekatos-hero__nav-arrow {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bekatos-hero__nav-arrow:hover {
+  background: #20a48e;
+  border-color: #20a48e;
+  color: #ffffff;
+  transform: scale(1.06);
+}
+
+.bekatos-hero__nav-timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: monospace;
+}
+
+.bekatos-hero__nav-timer i {
+  color: #20a48e;
+}
+
+.bekatos-hero__visual {
+  position: relative;
+  width: 100%;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bekatos-hero__stage {
+  width: 100% !important;
+  height: 480px !important;
+  min-height: 380px !important;
+  position: relative;
+  z-index: 2;
+}
+
+.bekatos-hero__stage canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+.bekatos-hero__caption {
+  color: #64748b !important;
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* ========================================================
+   FLAGSHIP SHOWCASE: BEKATOS TICKET SUITE
+   ======================================================== */
+.bekatos-ticket-section {
+  position: relative;
+  background: radial-gradient(circle at 80% 20%, #0d2238 0%, #060c14 70%);
+  color: #ffffff;
+  padding: 100px 0 90px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(32, 164, 142, 0.2);
+}
+
+.bekatos-ticket-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #20a48e 30%, #38bdf8 70%, transparent);
+}
+
+.bekatos-ticket-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(32, 164, 142, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+.bekatos-ticket-glow--top-left {
+  top: -150px;
+  left: -100px;
+}
+
+.bekatos-ticket-glow--bottom-right {
+  bottom: -200px;
+  right: -100px;
+}
+
+.bekatos-ticket-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(32, 164, 142, 0.15);
+  border: 1px solid rgba(32, 164, 142, 0.45);
+  color: #2dd4bf;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+}
+
+.bekatos-ticket-badge-pill .pill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2dd4bf;
+  box-shadow: 0 0 8px #2dd4bf;
+  animation: bekaPulse 2s infinite;
+}
+
+.bekatos-ticket-title {
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+}
+
+.bekatos-ticket-title span {
+  background: linear-gradient(135deg, #20a48e 0%, #38bdf8 70%, #00f2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bekatos-ticket-subtitle {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #94a3b8;
+  margin-bottom: 30px;
+  max-width: 580px;
+}
+
+/* 3D Stage Container */
+.bekatos-ticket-stage-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bekatos-ticket-stage {
+  width: 100% !important;
+  height: 520px !important;
+  min-height: 400px !important;
+  cursor: grab;
+  position: relative;
+  z-index: 2;
+}
+
+.bekatos-ticket-stage:active {
+  cursor: grabbing;
+}
+
+.bekatos-ticket-stage canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+.bekatos-ticket-stage-hint {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 12px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 3;
+}
+
+/* Features Grid */
+.bekatos-ticket-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.bekatos-feature-card {
+  background: rgba(15, 29, 46, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 18px;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(10px);
+}
+
+.bekatos-feature-card:hover {
+  background: rgba(20, 39, 62, 0.7);
+  border-color: rgba(32, 164, 142, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.bekatos-feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.bekatos-feature-icon--teal {
+  background: rgba(32, 164, 142, 0.18);
+  color: #2dd4bf;
+  border: 1px solid rgba(32, 164, 142, 0.35);
+}
+
+.bekatos-feature-icon--cyan {
+  background: rgba(56, 189, 248, 0.18);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.bekatos-feature-icon--rose {
+  background: rgba(244, 63, 94, 0.18);
+  color: #f43f5e;
+  border: 1px solid rgba(244, 63, 94, 0.35);
+}
+
+.bekatos-feature-icon--emerald {
+  background: rgba(16, 185, 129, 0.18);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.bekatos-feature-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 5px;
+}
+
+.bekatos-feature-card p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Action Buttons & Credentials */
+.bekatos-ticket-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.bekatos-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 24px;
+  background: linear-gradient(135deg, #147c71 0%, #20a48e 100%);
+  color: #ffffff !important;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none !important;
+  box-shadow: 0 4px 20px rgba(32, 164, 142, 0.4);
+  transition: all 0.25s ease;
+  border: 1px solid rgba(45, 212, 191, 0.3);
+}
+
+.bekatos-btn-primary:hover {
+  background: linear-gradient(135deg, #20a48e 0%, #00f2fe 100%);
+  color: #060c14 !important;
+  box-shadow: 0 8px 30px rgba(0, 242, 254, 0.5);
+  transform: translateY(-2px);
+}
+
+.bekatos-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 50px;
+  padding: 0 20px;
+  background: rgba(30, 41, 59, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  color: #e2e8f0 !important;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.bekatos-btn-secondary:hover {
+  background: rgba(51, 65, 85, 0.85);
+  border-color: #94a3b8;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* Quick Credentials Drawer Box */
+.bekatos-ticket-credentials-box {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(32, 164, 142, 0.3);
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.bekatos-cred-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bekatos-cred-item .cred-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+.bekatos-cred-item .cred-value {
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* ========================================================
+   MODERN TECH STACK & ARCHITECTURE SECTION
+   ======================================================== */
+.bekatos-tech-stack-section {
+  position: relative;
+  background: #09121d;
+  color: #ffffff;
+  padding: 85px 0 75px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.bekatos-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.bekatos-tech-item {
+  background: rgba(15, 27, 41, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 22px 14px;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.bekatos-tech-item:hover {
+  background: rgba(22, 42, 63, 0.9);
+  border-color: #20a48e;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.bekatos-tech-item .tech-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.bekatos-tech-item h5 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
+.bekatos-tech-item span {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* ========================================================
+   RESPONSIVE QUERIES
+   ======================================================== */
+@media (max-width: 991px) {
+  .bekatos-ticket-title {
+    font-size: 34px;
+  }
+  .bekatos-ticket-features {
+    grid-template-columns: 1fr;
+  }
+  .bekatos-ticket-stage {
+    height: 400px !important;
+  }
+  .bekatos-hero__stage {
+    height: 380px !important;
+  }
+  .bekatos-tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .header-ticket-cta-wrap {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .bekatos-hero h1 {
+    font-size: 34px !important;
+  }
+  .bekatos-ticket-title {
+    font-size: 26px;
+  }
+  .bekatos-ticket-stage {
+    height: 320px !important;
+  }
+  .bekatos-hero__stage {
+    height: 300px !important;
+  }
+  .bekatos-ticket-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .bekatos-ticket-credentials-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .bekatos-tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
