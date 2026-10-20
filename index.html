@@ -17,19 +17,18 @@
     </script>
     <!-- meta tag -->
     <meta charset="utf-8" />
-    <title>Bekatos</title>
-    <meta name="title" />
+    <title>Bekatos · Yeni Nesil Kurumsal Yazılım & SaaS Stüdyosu</title>
     <meta
       name="title"
-      content="Daha iyi müşteri katılımı ve işlemleri için QR yazılımınızı oluşturun."
+      content="Bekatos · Yeni Nesil Kurumsal Yazılım, SaaS Ürünleri & Bilet Destek Sistemi"
     />
     <meta
       name="description"
-      content="Bekatos, faturalar, pazarlama, lojistik ve envanter depolarında kullanılan QR kod etiketlerini oluşturmak için yazılım sistemlerini yükseltir ve özelleştirir. Yazılım geliştiricilerden oluşan ekibimiz, birçok endüstride çok sayıda çözümümüz ile gereken API'leri kullanarak sağlam sistemler oluştururuz."
+      content="Bekatos; kurumsal bilet yönetim platformumuz Bekatos Ticket (ticket.bekatos.com), akıllı QR kılavuz ekosistemimiz b-Kılavuz, özel ERP yönetim sistemleri ve yüksek performanslı mobil uygulamalar üreten ileri teknoloji yazılım stüdyosudur."
     />
     <meta
       name="keywords"
-      content="QR kod, QR yazılımı, QR menü, Dijital Kart,Dijital Kartvizit,E Kılavuz, Yazılım, İzmir Yazılım,Akıllı Kartvizit,QR Kod Kılavuz, Kullanım Kılavuzu"
+      content="Bekatos, Bekatos Ticket, Ticket Sistemi, Bilet Destek, b-Kılavuz, SaaS, Yazılım Stüdyosu, Three.js, QR Kod, E Kılavuz, Dijital Kartvizit, İzmir Yazılım, ERP Sistemleri"
     />
     <meta name="robots" content="index, follow" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -82,6 +81,8 @@
     <!-- This stylesheet dynamically changed from style.less -->
     <!-- responsive css -->
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
+    <!-- Bekatos Modern Tech & Ticket Suite css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bekatos-tech.css" />
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -108,15 +109,15 @@
           <i class="fa fa-times" aria-hidden="true"></i>
         </button>
         <div class="eva-intro__copy">
-          <span class="eva-intro__eyebrow">Bekatos EVA</span>
-          <h1 id="evaIntroTitle">Dijital kılavuzlara yeni nesil QR geçişi</h1>
+          <span class="eva-intro__eyebrow">b-Kılavuz</span>
+          <h1 id="evaIntroTitle">b-Kılavuz ile dijital kılavuzlara yeni nesil QR geçişi</h1>
           <p>
             Ürün, servis ve müşteri deneyimi bilgilerini tek bir akıllı panelde
-            buluşturan etkileşimli Bekatos çözümü.
+            buluşturan etkileşimli Bekatos b-Kılavuz çözümü.
           </p>
           <a class="eva-intro__more" href="ekilavuz.html">Daha fazla bilgi al <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
         </div>
-        <div class="eva-intro__stage" id="evaIntroStage" role="img" aria-label="Bekatos EVA QR kılavuzunun ön ve arka yüzünü gösteren üç boyutlu animasyon"></div>
+        <div class="eva-intro__stage" id="evaIntroStage" role="img" aria-label="b-Kılavuz QR kılavuzunun ön ve arka yüzünü gösteren üç boyutlu animasyon"></div>
       </div>
     </section>
 
@@ -193,17 +194,47 @@
                   </div>
                 </div>
                 <div class="col-lg-9 text-right">
-                  <div class="rs-menu-area">
+                  <div class="rs-menu-area bekatos-header-flex">
                     <div class="main-menu">
-                      <nav class="rs-menu pr-100 lg-pr-50 md-pr-0">
+                      <nav class="rs-menu">
                         <ul class="nav-menu">
-                          <li><a href="#">Anasayfa</a></li>
+                          <li class="current-menu-item"><a href="#">Anasayfa</a></li>
+                          <li class="menu-item-has-children">
+                            <a href="#bekatos-ticket">Ürünlerimiz <span class="badge badge-success ml-1" style="font-size: 10px; background: #20a48e;">Yeni</span></a>
+                            <ul class="sub-menu">
+                              <li>
+                                <a href="#bekatos-ticket"><i class="fa fa-ticket mr-2" style="color: #20a48e;"></i> Bekatos Ticket (SaaS)</a>
+                              </li>
+                              <li>
+                                <a href="ekilavuz.html"><i class="fa fa-qrcode mr-2" style="color: #38bdf8;"></i> b-Kılavuz (Akıllı QR)</a>
+                              </li>
+                              <li>
+                                <a href="https://shop.bekatos.com" target="_blank"><i class="fa fa-id-card-o mr-2" style="color: #e5a148;"></i> Bekatos Dcard</a>
+                              </li>
+                              <li>
+                                <a href="management-systems.html"><i class="fa fa-database mr-2" style="color: #5278a3;"></i> Yönetim Sistemleri (ERP)</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="#bekatos-services">Servislerimiz</a>
+                          </li>
                           <li>
                             <a href="about.html">Hakkımızda</a>
                           </li>
                           <li>
-                            <a href="services.html">Servislerimiz</a>
+                            <a href="contact.html">İletişim</a>
                           </li>
+                        </ul>
+                      </nav>
+                    </div>
+                    <div class="header-ticket-cta-wrap hidden-md">
+                      <a href="https://ticket.bekatos.com" target="_blank" class="rs-ticket-btn" title="Bekatos Ticket Giriş Portalı">
+                        <span class="live-dot"></span>
+                        <span>Bekatos Ticket</span>
+                        <i class="fa fa-external-link"></i>
+                      </a>
+                    </div>
                           <!-- <li class="menu-item-has-children">
                                                        <a href="#">Pages</a>
                                                        <ul class="sub-menu">
@@ -258,9 +289,6 @@
                                                           <li><a href="blog-details.html">Blog Details</a></li>
                                                       </ul>
                                                    </li> -->
-                          <li>
-                            <a href="contact.html">İletişim</a>
-                          </li>
                         </ul>
                         <!-- //.nav-menu -->
                       </nav>
@@ -334,27 +362,86 @@
       <!--Full width header End-->
 
       <section class="bekatos-hero" aria-labelledby="bekatosHeroTitle">
+        <div class="bekatos-ambient-network" id="bekatosAmbientNetwork"></div>
         <div class="bekatos-hero__grid" aria-hidden="true"></div>
         <div class="bekatos-hero__copy">
-          <p class="bekatos-hero__eyebrow"><span></span> Dijital ürün stüdyosu</p>
-          <h1 id="bekatosHeroTitle">İşinizi geleceğe taşıyan <em>dijital deneyimler.</em></h1>
-          <p class="bekatos-hero__description">Web tasarımından mobil uygulamalara, işinize özel ERP sistemlerinden QR kılavuzlara kadar fikirlerinizi çalışan ürünlere dönüştürüyoruz.</p>
-          <div class="bekatos-hero__actions">
-            <a class="bekatos-hero__button bekatos-hero__button--primary" href="services.html">Çözümlerimizi keşfedin <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-            <button class="bekatos-hero__button bekatos-hero__button--text" type="button" id="openEvaIntro"><span class="bekatos-hero__play"><i class="fa fa-qrcode" aria-hidden="true"></i></span> QR kılavuz deneyimi</button>
+          <div class="bekatos-hero__slides-wrapper">
+            <!-- SLIDE 1: Bekatos Ticket SaaS Platform -->
+            <div class="bekatos-hero__slide is-active" id="heroSlide0" data-slide-index="0">
+              <p class="bekatos-hero__eyebrow"><span></span> YENİ NESİL KURUMSAL YAZILIM & SAAS DESTEK SİSTEMİ</p>
+              <h1 id="bekatosHeroTitle">İşinizi geleceğe taşıyan <em>kurumsal bilet destek & SaaS platformu.</em></h1>
+              <p class="bekatos-hero__description">Bekatos; kurumsal destek süreçlerini dönüştüren yeni amiral gemisi SaaS platformumuz <strong>Bekatos Ticket (ticket.bekatos.com)</strong>, gerçek zamanlı SSE canlı bildirimleri, AI bilet önceliklendirme ve PostgreSQL 14 altyapısıyla müşteri memnuniyetini zirveye taşır.</p>
+              <div class="bekatos-hero__actions">
+                <a class="bekatos-hero__button bekatos-hero__button--primary" href="#bekatos-ticket">Bekatos Ticket'ı Keşfedin <i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+                <a class="bekatos-hero__button bekatos-hero__button--outline" href="https://ticket.bekatos.com" target="_blank">Canlı Demo Giriş <i class="fa fa-external-link" aria-hidden="true"></i></a>
+                <button class="bekatos-hero__button bekatos-hero__button--text" type="button" onclick="if(window.heroSlider) window.heroSlider.goToSlide(1)"><span class="bekatos-hero__play"><i class="fa fa-qrcode" aria-hidden="true"></i></span> b-Kılavuz'a Geç</button>
+              </div>
+              <div class="bekatos-hero__quick-pills">
+                <a href="#bekatos-ticket" class="bekatos-hero__pill bekatos-hero__pill--active"><span class="live-dot"></span> Bekatos Ticket (Canlı)</a>
+                <span class="bekatos-hero__pill">⚡ Gerçek Zamanlı SSE</span>
+                <span class="bekatos-hero__pill">🐘 PostgreSQL 14</span>
+                <span class="bekatos-hero__pill">🤖 AI Önceliklendirme</span>
+              </div>
+            </div>
+
+            <!-- SLIDE 2: Bekatos b-Kılavuz QR Ecosystem -->
+            <div class="bekatos-hero__slide" id="heroSlide1" data-slide-index="1">
+              <p class="bekatos-hero__eyebrow"><span class="eva-dot"></span> DİJİTAL DÖNÜŞÜM & AKILLI QR KILAVUZ EKOSİSTEMİ</p>
+              <h2 class="bekatos-hero__title-slide2">Kağıt kılavuzlara son verin: <em>Bekatos b-Kılavuz.</em></h2>
+              <p class="bekatos-hero__description">Ürünlerinizin kullanım kılavuzlarını dijitalleştirin; baskı ve lojistik maliyetlerini %50 azaltın. Tek bir QR kodla müşterilerinize 4K video anlatım, çoklu dil desteği, dijital garanti belgesi ve anında teknik servis randevusu sunun.</p>
+              <div class="bekatos-hero__actions">
+                <a class="bekatos-hero__button bekatos-hero__button--primary bekatos-hero__button--eva" href="ekilavuz.html">b-Kılavuz'u Keşfedin <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                <button class="bekatos-hero__button bekatos-hero__button--outline bekatos-hero__button--outline-eva" type="button" id="openEvaIntroSlide2"><i class="fa fa-cube" aria-hidden="true"></i> 3D Modeli İncele</button>
+                <a class="bekatos-hero__button bekatos-hero__button--text popup-videos" href="bekatosQRvideo.mov"><span class="bekatos-hero__play"><i class="fa fa-play" aria-hidden="true"></i></span> Tanıtım Videosu</a>
+              </div>
+              <div class="bekatos-hero__quick-pills">
+                <a href="ekilavuz.html" class="bekatos-hero__pill bekatos-hero__pill--eva-active"><span class="live-dot live-dot--eva"></span> b-Kılavuz</a>
+                <span class="bekatos-hero__pill">🌿 %100 Sıfır Kağıt</span>
+                <span class="bekatos-hero__pill">🎬 4K Video Anlatım</span>
+                <span class="bekatos-hero__pill">🛡️ Dijital Garanti</span>
+                <span class="bekatos-hero__pill">🌍 Çoklu Dil</span>
+              </div>
+            </div>
           </div>
-          <div class="bekatos-hero__expertise" aria-label="Uzmanlık alanlarımız">
-            <a href="web-development.html">Web tasarım <span>↗</span></a>
-            <a href="management-systems.html">ERP sistemleri <span>↗</span></a>
-            <a href="mobile-development.html">Mobil uygulama <span>↗</span></a>
+
+          <!-- Slider Navigation & 10s Auto-play Controls -->
+          <div class="bekatos-hero__slider-nav" aria-label="Slayt geçiş kontrolleri">
+            <div class="bekatos-hero__nav-tabs">
+              <button type="button" class="bekatos-hero__nav-tab is-active" data-slide-target="0" aria-label="Slayt 1: Bekatos Ticket">
+                <div class="nav-tab-header">
+                  <span class="tab-index">01</span>
+                  <span class="tab-name">Bekatos Ticket</span>
+                </div>
+                <span class="tab-sub">SaaS Bilet Sistemi</span>
+                <div class="nav-tab-progress"><div class="nav-tab-progress-bar"></div></div>
+              </button>
+              <button type="button" class="bekatos-hero__nav-tab" data-slide-target="1" aria-label="Slayt 2: Bekatos b-Kılavuz">
+                <div class="nav-tab-header">
+                  <span class="tab-index">02</span>
+                  <span class="tab-name">b-Kılavuz</span>
+                </div>
+                <span class="tab-sub">Akıllı QR Kılavuz</span>
+                <div class="nav-tab-progress"><div class="nav-tab-progress-bar"></div></div>
+              </button>
+            </div>
+            <div class="bekatos-hero__nav-arrows">
+              <button type="button" class="bekatos-hero__nav-arrow" id="heroPrevBtn" aria-label="Önceki slayt">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+              </button>
+              <span class="bekatos-hero__nav-timer" title="Otomatik geçiş süresi: 10 saniye"><i class="fa fa-clock-o"></i> 10s</span>
+              <button type="button" class="bekatos-hero__nav-arrow" id="heroNextBtn" aria-label="Sonraki slayt">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </button>
+            </div>
           </div>
         </div>
+
         <div class="bekatos-hero__visual">
-          <div class="bekatos-hero__visual-label"><span class="bekatos-hero__live-dot"></span> Fikirden ürüne</div>
+          <div class="bekatos-hero__visual-label" id="heroVisualLabel"><span class="bekatos-hero__live-dot"></span> Canlı SaaS & Destek Ekosistemi</div>
           <div class="bekatos-hero__stage" id="bekatosHeroStage" role="img" aria-label="Üç boyutlu web paneli ve mobil uygulama arayüzü animasyonu"></div>
-          <div class="bekatos-hero__caption"><span>01 / 03</span><span>WEB · ERP · MOBİL</span></div>
+          <div class="bekatos-hero__caption"><span id="heroCaptionIndex">01 / 02</span><span id="heroCaptionTitle">BEKATOS TICKET SUITE · SAAS & REAL-TIME SSE</span></div>
         </div>
-        <a class="bekatos-hero__scroll" href="#bekatos-services"><span></span> Daha fazlası</a>
+        <a class="bekatos-hero__scroll" href="#bekatos-ticket"><span></span> Aşağı kaydırın</a>
       </section>
 
       <!-- Services Section Start -->
@@ -429,6 +516,103 @@
         </div>
       </div>
       <!-- Services Section End -->
+
+      <!-- Bekatos Ticket Flagship Showcase Start -->
+      <section id="bekatos-ticket" class="bekatos-ticket-section" aria-labelledby="bekatosTicketTitle">
+        <div class="bekatos-ticket-glow bekatos-ticket-glow--top-left"></div>
+        <div class="bekatos-ticket-glow bekatos-ticket-glow--bottom-right"></div>
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12 mb-40 lg-mb-0">
+              <div class="bekatos-ticket-copy">
+                <div class="bekatos-ticket-badge-pill">
+                  <span class="pill-dot"></span>
+                  <span>Amiral Gemisi SaaS Ürünümüz · Canlıda</span>
+                </div>
+                <h2 id="bekatosTicketTitle" class="bekatos-ticket-title">
+                  Müşteri Desteğinde Yeni Çağ: <span>Bekatos Ticket</span>
+                </h2>
+                <p class="bekatos-ticket-subtitle">
+                  İşletmeniz için yüksek performanslı, yapay zeka destekli ve gerçek zamanlı bilet yönetim platformu. Müşteri memnuniyetini artırın, yanıt sürelerini saniyeler seviyesine indirin.
+                </p>
+
+                <!-- 4 Highlights Grid -->
+                <div class="bekatos-ticket-features">
+                  <div class="bekatos-feature-card">
+                    <div class="bekatos-feature-icon bekatos-feature-icon--teal">
+                      <i class="fa fa-bolt"></i>
+                    </div>
+                    <h4>Canlı Bildirimler (SSE & WS)</h4>
+                    <p>Sayfayı yenilemeden anlık yeni bilet, mesajlaşma ve durum güncellemeleri.</p>
+                  </div>
+                  <div class="bekatos-feature-card">
+                    <div class="bekatos-feature-icon bekatos-feature-icon--cyan">
+                      <i class="fa fa-cogs"></i>
+                    </div>
+                    <h4>Yapay Zeka Destekli Çözüm</h4>
+                    <p>Gelen talepleri otomatik sınıflandıran ve anında çözüm öneren AI motoru.</p>
+                  </div>
+                  <div class="bekatos-feature-card">
+                    <div class="bekatos-feature-icon bekatos-feature-icon--emerald">
+                      <i class="fa fa-database"></i>
+                    </div>
+                    <h4>PostgreSQL 14 & Güvenlik</h4>
+                    <p>Kurumsal veri güvenliği, ACID uyumluluğu ve yüksek erişilebilirlikli mimari.</p>
+                  </div>
+                  <div class="bekatos-feature-card">
+                    <div class="bekatos-feature-icon bekatos-feature-icon--rose">
+                      <i class="fa fa-line-chart"></i>
+                    </div>
+                    <h4>SLA Takibi & Analitik</h4>
+                    <p>Öncelik eskalasyonu, ilk temas çözüm oranları ve müşteri memnuniyet (CSAT) skorları.</p>
+                  </div>
+                </div>
+
+                <!-- Action CTA -->
+                <div class="bekatos-ticket-actions">
+                  <a href="https://ticket.bekatos.com" target="_blank" class="bekatos-btn-primary">
+                    <span>Canlı Sistemi Aç & Giriş Yap</span>
+                    <i class="fa fa-external-link"></i>
+                  </a>
+                  <a href="#demoInfo" data-toggle="collapse" class="bekatos-btn-secondary">
+                    <i class="fa fa-key"></i>
+                    <span>Demo Giriş Bilgileri</span>
+                  </a>
+                </div>
+
+                <!-- Collapsible / Quick Demo Info -->
+                <div id="demoInfo" class="collapse show mt-20">
+                  <div class="bekatos-ticket-credentials-box">
+                    <div class="bekatos-cred-item">
+                      <span class="cred-label">Süper Admin:</span>
+                      <span class="cred-value">super@bekatos.com</span>
+                    </div>
+                    <div class="bekatos-cred-item">
+                      <span class="cred-label">Parola:</span>
+                      <span class="cred-value">Demo2026!</span>
+                    </div>
+                    <div class="bekatos-cred-item">
+                      <span class="cred-label">Canlı Domain:</span>
+                      <span class="cred-value">ticket.bekatos.com</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+              <div class="bekatos-ticket-stage-wrap">
+                <div class="bekatos-ticket-stage" id="bekatosTicketStage" role="img" aria-label="Bekatos Ticket üç boyutlu interaktif bilet yönetim konsolu"></div>
+                <div class="bekatos-ticket-stage-hint">
+                  <i class="fa fa-arrows"></i>
+                  <span>Fareyi hareket ettirerek 3D sahneyi keşfedin</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Bekatos Ticket Flagship Showcase End -->
 
       <!-- About Section Start -->
       <div class="rs-about bg4 pt-120 pb-120 md-pt-80 md-pb-80">
@@ -774,6 +958,56 @@
         </div>
       </div>
       <!-- Services Section End -->
+
+      <!-- Tech Stack & Enterprise Architecture Start -->
+      <section class="bekatos-tech-stack-section">
+        <div class="container">
+          <div class="sec-title2 text-center mb-20">
+            <span class="bekatos-ticket-badge-pill" style="margin-bottom: 12px;">
+              <span class="pill-dot"></span> İleri Teknoloji & Mimari
+            </span>
+            <h2 class="title white-color">
+              Yenilikçi Yazılım Mimarimiz ile Ölçeklenebilir Sistemler
+            </h2>
+            <p style="color: #94a3b8; max-width: 680px; margin: 0 auto;">
+              Bekatos ürünleri ve kurumsal çözümleri, modern teknolojiler ve yüksek performans standartlarıyla inşa edilir.
+            </p>
+          </div>
+          <div class="bekatos-tech-grid">
+            <div class="bekatos-tech-item">
+              <div class="tech-icon" style="color: #38bdf8;"><i class="fa fa-code"></i></div>
+              <h5>Node.js & TS</h5>
+              <span>Yüksek Hızlı Backend</span>
+            </div>
+            <div class="bekatos-tech-item">
+              <div class="tech-icon" style="color: #2dd4bf;"><i class="fa fa-database"></i></div>
+              <h5>PostgreSQL 14</h5>
+              <span>ACID İlişkisel Veri</span>
+            </div>
+            <div class="bekatos-tech-item">
+              <div class="tech-icon" style="color: #34d399;"><i class="fa fa-cube"></i></div>
+              <h5>Three.js & 3D</h5>
+              <span>İnteraktif WebGL</span>
+            </div>
+            <div class="bekatos-tech-item">
+              <div class="tech-icon" style="color: #f43f5e;"><i class="fa fa-bolt"></i></div>
+              <h5>Real-Time SSE</h5>
+              <span>WebSockets & Akış</span>
+            </div>
+            <div class="bekatos-tech-item">
+              <div class="tech-icon" style="color: #a855f7;"><i class="fa fa-microchip"></i></div>
+              <h5>AI Destekli Motor</h5>
+              <span>Otomatik Bilet Çözümü</span>
+            </div>
+            <div class="bekatos-tech-item">
+              <div class="tech-icon" style="color: #fbbf24;"><i class="fa fa-shield"></i></div>
+              <h5>Nginx & SSL</h5>
+              <span>Ters Proxy & Güvenlik</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Tech Stack & Enterprise Architecture End -->
 
       <!-- Call Us Section Start -->
       <div class="rs-call-us bg1 pt-120 md-pt-80">
@@ -1533,8 +1767,13 @@
     <script src="assets/js/contact.form.js"></script>
     <!-- main js -->
     <script src="assets/js/main.js"></script>
-    <script type="module" src="assets/js/bekatos-home-scene.js"></script>
-    <script type="module" src="assets/js/bekatos-eva-intro.js"></script>
+    <!-- Three.js Standalone Engine (Full Offline & file:// Support) -->
+    <script src="assets/js/three.min.js"></script>
+    <script src="assets/js/bekatos-panel-assets.js"></script>
+    <script src="assets/js/bekatos-ambient-network.js"></script>
+    <script src="assets/js/bekatos-home-scene.js"></script>
+    <script src="assets/js/bekatos-ticket-scene.js"></script>
+    <script src="assets/js/bekatos-eva-intro.js"></script>
   </body>
 
   <!-- Mirrored from rstheme.com/products/html/braintech/index2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Dec 2021 21:25:03 GMT -->
