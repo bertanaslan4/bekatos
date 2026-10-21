@@ -947,3 +947,477 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ========================================================
+   HIGH-CONVERSION SALES ELEMENTS & QUICK DEMO ACCESS
+   ======================================================== */
+.bekatos-hero__button--glow {
+  position: relative;
+  background: linear-gradient(135deg, #0d9488 0%, #20a48e 50%, #06b6d4 100%) !important;
+  box-shadow: 0 4px 22px rgba(32, 164, 142, 0.5) !important;
+  border: 1px solid rgba(45, 212, 191, 0.6) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em;
+}
+
+.bekatos-hero__button--glow:hover {
+  background: linear-gradient(135deg, #14b8a6 0%, #2dd4bf 50%, #22d3ee 100%) !important;
+  color: #04121a !important;
+  box-shadow: 0 8px 30px rgba(45, 212, 191, 0.65) !important;
+  transform: translateY(-2px);
+}
+
+.bekatos-hero__button--whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 50px;
+  padding: 0 22px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none !important;
+  border: 1px solid rgba(37, 211, 102, 0.6);
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+  transition: all 0.25s ease;
+}
+
+.bekatos-hero__button--whatsapp:hover {
+  background: linear-gradient(135deg, #2ee772 0%, #18a999 100%);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 26px rgba(37, 211, 102, 0.55);
+}
+
+.bekatos-hero__credentials-card {
+  margin-top: 18px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(32, 164, 142, 0.4);
+  border-radius: 10px;
+  padding: 12px 16px;
+  backdrop-filter: blur(10px);
+  max-width: 600px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.credentials-card__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.credentials-card__header strong {
+  color: #2dd4bf;
+  font-weight: 700;
+}
+
+.credentials-card__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.credentials-card__row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cred-chip {
+  font-size: 12px;
+  color: #cbd5e1;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 9px;
+  border-radius: 6px;
+  font-family: monospace;
+}
+
+.cred-chip strong {
+  color: #38bdf8;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.cred-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(32, 164, 142, 0.2);
+  border: 1px solid rgba(32, 164, 142, 0.5);
+  color: #2dd4bf;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cred-copy-btn:hover, .cred-copy-btn.is-copied {
+  background: #20a48e;
+  color: #060c14;
+}
+
+.cred-direct-btn {
+  font-size: 12px;
+  font-weight: 700;
+  color: #38bdf8;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  transition: all 0.2s ease;
+}
+
+.cred-direct-btn:hover {
+  background: #38bdf8;
+  color: #060c14 !important;
+}
+
+/* Flagship Section Enhancements */
+.bekatos-btn-large {
+  min-height: 52px;
+  padding: 0 24px;
+  font-size: 15px;
+}
+
+.bekatos-btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 24px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #ffffff !important;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none !important;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.25s ease;
+  border: 1px solid rgba(37, 211, 102, 0.5);
+}
+
+.bekatos-btn-whatsapp:hover {
+  background: linear-gradient(135deg, #2ee772 0%, #18a999 100%);
+  color: #ffffff !important;
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+  transform: translateY(-2px);
+}
+
+.credentials-box-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #94a3b8;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.credentials-box-header strong {
+  color: #2dd4bf;
+}
+
+.credentials-box-grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 10px 0;
+}
+
+.credentials-box-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-copy-cred {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(32, 164, 142, 0.25);
+  border: 1px solid rgba(32, 164, 142, 0.6);
+  color: #2dd4bf;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-copy-cred:hover, .btn-copy-cred.is-copied {
+  background: #20a48e;
+  color: #060c14;
+}
+
+.cred-guarantee {
+  font-size: 11px;
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ========================================================
+   FLOATING FOUNDER WHATSAPP DIRECT CHAT WIDGET
+   ======================================================== */
+.bekatos-floating-wa {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  z-index: 99999;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.bekatos-floating-wa__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #ffffff !important;
+  padding: 12px 20px 12px 16px;
+  border-radius: 50px;
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
+  text-decoration: none !important;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+}
+
+.bekatos-floating-wa__btn:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 12px 36px rgba(37, 211, 102, 0.65);
+  color: #ffffff !important;
+}
+
+.bekatos-floating-wa__btn i {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.wa-btn-label {
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.wa-pulse {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50px;
+  border: 2px solid #25D366;
+  opacity: 0.8;
+  animation: waPulseAnim 2.2s infinite;
+  pointer-events: none;
+}
+
+@keyframes waPulseAnim {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.16);
+    opacity: 0;
+  }
+}
+
+.wa-online-dot {
+  position: absolute;
+  top: 3px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  background: #4ade80;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}
+
+/* Floating Popover */
+.bekatos-floating-wa__popover {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 320px;
+  background: rgba(11, 20, 32, 0.96);
+  border: 1px solid rgba(32, 164, 142, 0.45);
+  border-radius: 16px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(32, 164, 142, 0.2);
+  backdrop-filter: blur(16px);
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px) scale(0.95);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bekatos-floating-wa__popover.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.bekatos-floating-wa__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.bekatos-floating-wa__close:hover {
+  color: #ffffff;
+}
+
+.bekatos-floating-wa__popover-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.wa-avatar-wrap {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+
+.wa-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border: 2px solid #20a48e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2dd4bf;
+  font-size: 20px;
+}
+
+.wa-avatar-status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: #25D366;
+  border: 2px solid #0f172a;
+  border-radius: 50%;
+}
+
+.wa-header-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.wa-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.wa-sub {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.wa-message-preview {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #e2e8f0;
+  background: rgba(30, 41, 59, 0.7);
+  padding: 10px 12px;
+  border-radius: 10px;
+  border-left: 3px solid #25D366;
+  margin: 0 0 10px;
+}
+
+.wa-message-preview strong {
+  color: #2dd4bf;
+}
+
+.wa-response-time {
+  font-size: 11px;
+  color: #4ade80;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wa-direct-chat-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.wa-direct-chat-btn:hover {
+  background: linear-gradient(135deg, #2ee772 0%, #18a999 100%);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .bekatos-floating-wa {
+    bottom: 18px;
+    right: 16px;
+  }
+  .bekatos-floating-wa__btn {
+    padding: 10px 14px 10px 12px;
+  }
+  .wa-btn-label {
+    font-size: 12px;
+  }
+  .bekatos-floating-wa__popover {
+    width: 290px;
+    right: 0;
+  }
+}
+
